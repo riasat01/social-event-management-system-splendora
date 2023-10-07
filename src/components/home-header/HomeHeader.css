@@ -1,0 +1,6 @@
+.banner {
+    
+    background-image: url('../../assets/home1.jpg'), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+    background-blend-mode: overlay;
+    background-size: cover;
+}

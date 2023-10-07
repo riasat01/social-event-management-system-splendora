@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "title": "Wedding",
+        "description": "Celebrate the union of two souls in a grand wedding ceremony.",
+        "img": "https://i.postimg.cc/vHsJWJfz/image.png"
+    },
+    {
+        "id": 2,
+        "title": "Birthday Party",
+        "description": "Throw a fun and memorable birthday party for your loved ones.",
+        "img": "https://i.postimg.cc/T2994FBQ/image.png"
+    },
+    {
+        "id": 3,
+        "title": "Anniversary",
+        "description": "Celebrate years of love and togetherness with an anniversary event.",
+        "img": "https://i.postimg.cc/rmq4GFyT/image.png"
+    },
+    {
+        "id": 4,
+        "title": "Engagement Party",
+        "description": "Announce your engagement with a joyous engagement party.",
+        "img": "https://i.postimg.cc/x1RNfVyF/image.png"
+    },
+    {
+        "id": 5,
+        "title": "Retirement Party",
+        "description": "Bid farewell to a colleague with a memorable retirement party.",
+        "img": "https://i.postimg.cc/rskqRKqG/image.png"
+    },
+    {
+        "id": 6,
+        "title": "Baby Shower",
+        "description": "Welcome a new addition to the family with a heartwarming baby shower.",
+        "img": "https://i.postimg.cc/fyCQ3C2Z/image.png"
+    },
+    {
+        "id": 7,
+        "title": "Graduation Party",
+        "description": "Celebrate academic achievements with a graduation party.",
+        "img": "https://i.postimg.cc/Y0ZfxKyx/image.png"
+    },
+    {
+        "id": 8,
+        "title": "Holiday Party",
+        "description": "Spread holiday cheer with a festive holiday party.",
+        "img": "https://i.postimg.cc/13cw8qPB/image.png"
+    },
+    {
+        "id": 9,
+        "title": "Housewarming Party",
+        "description": "Welcome friends and family to your new home with a housewarming party.",
+        "img": "https://i.postimg.cc/c47cVHCp/image.png"
+    },
+    {
+        "id": 10,
+        "title": "Farewell Party",
+        "description": "Bid farewell to a departing friend or colleague with a heartfelt party.",
+        "img": "https://i.postimg.cc/k5L8V3DN/image.png"
+    }
+]
