@@ -1,7 +1,17 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { UserAuth } from "../auth-provider/AuthProvider";
 
 const Navbar = () => {
+    const {user, logOut} = useContext(UserAuth);
 
+    // sign out User
+    const handleSignOut = () => {
+        logOut()
+        .then(() => {
+            alert(`${user.displayName} logged out`)
+        })
+    }
     const navs = <>
         <li>
             <NavLink
@@ -41,7 +51,15 @@ const Navbar = () => {
                 <ul className="flex items-center gap-6">
                     {navs}
                 </ul>
-                <Link to={`/login`}><button className="bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 text-lg font-semibold">Login</button></Link>
+                {
+                    user?.email ?
+                    <section className="flex gap-6 items-center">
+                        <p>{user.displayName}</p>
+                        <button onClick={handleSignOut} className="bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 font-semibold">Log Out</button>
+                    </section>
+                    :
+                    <Link to={`/login`}><button className="bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 font-semibold">Login</button></Link>
+                }
             </nav>
         </div>
     );

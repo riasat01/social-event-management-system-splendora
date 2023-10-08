@@ -1,15 +1,37 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserAuth } from "../../components/auth-provider/AuthProvider";
 
 const Register = () => {
+    const { userWithEmail, setUserName } = useContext(UserAuth);
+    
+    // register user
+    const handleRegister = (e) => {
+        e?.preventDefault();
+        userWithEmail(e?.target?.email?.value, e?.target?.password?.value)
+            .then(userCredential => {
+                console.log(userCredential.user);
+                setUserName(e?.target?.name?.value)
+                .then(() => {
+                    console.log(`user name updated`);
+                })
+                .catch(error => {
+                    console.log(error.message);
+                })
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col w-1/2">
                 <div className="text-center">
-                    <h1 className="text-5xl font-bold mb-16">Register now!</h1>
+                    <h1 className="text-5xl font-bold my-16">Register now!</h1>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100">
                     <div className="card-body">
-                        <form>
+                        <form onSubmit={handleRegister}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -32,7 +54,7 @@ const Register = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                            <button className="w-full bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 text-lg font-semibold">Register</button>
+                                <button className="w-full bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 text-lg font-semibold">Register</button>
                             </div>
                         </form>
                         <Link to={`/login`}>Already have an account? <span>Please Login</span></Link>
