@@ -6,6 +6,9 @@ import CategoryPage from "../../pages/category-page/CategoryPage";
 import LoginPage from "../../pages/login/LoginPage";
 import Login from "../../pages/login/Login";
 import Register from "../../pages/login/Register";
+import PrivateRoute from "../private-route/PrivateRoute";
+import Profile from "../../pages/profile/Profile";
+import Bookings from "../../pages/bookings/Bookings";
 
 const MainRoute = createBrowserRouter([
     {
@@ -35,6 +38,14 @@ const MainRoute = createBrowserRouter([
                         element: <Register></Register>
                     }
                 ]
+            },
+            {
+                path: `/profile`,
+                element: <PrivateRoute><Profile></Profile></PrivateRoute>
+            },
+            {
+                path: `/bookings`,
+                element: <PrivateRoute><Bookings></Bookings></PrivateRoute>
             }
         ]
     }

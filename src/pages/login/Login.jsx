@@ -4,7 +4,7 @@ import { UserAuth } from "../../components/auth-provider/AuthProvider";
 import { FcGoogle } from 'react-icons/fc'
 
 const Login = () => {
-    const { loginWithEMail } = useContext(UserAuth);
+    const { loginWithEMail, continueWithGoogle } = useContext(UserAuth);
     const navigate = useNavigate();
 
     // sign in user
@@ -18,6 +18,17 @@ const Login = () => {
             .catch(error => {
                 console.log(error.message);
             })
+    }
+
+    const handlethirdPartySignIn = (callback) => {
+        callback()
+        .then(userCredintial => {
+            console.log(userCredintial.user);
+            navigate(`/`);
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -52,7 +63,7 @@ const Login = () => {
                             <legend className="text-center px-1">Or continue with</legend>
                         </fieldset>
                         <section className="flex justify-center items-center">
-                            <FcGoogle className="text-4xl w-fit"></FcGoogle>
+                            <FcGoogle onClick={() => handlethirdPartySignIn(continueWithGoogle)} className="text-4xl w-fit"></FcGoogle>
                         </section>
                     </div>
                 </div>
