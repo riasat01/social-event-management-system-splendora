@@ -29,23 +29,32 @@ const CategoryCarousel = ({ events }) => {
     }
     return (
         <div className="carousel w-full">
-            <div id="item1" className="carousel-item w-full h-96 flex justify-center items-center flex-col" style={card0}>
-                {/* <img src={events[0]?.img} className="h-48 mb-4 w-full" /> */}
+
+            
+            <div id="item1" className="carousel-item w-full h-48 flex justify-center items-center flex-col" style={card0}>
                 <h1 className='mb-4 text-3xl text-transparent font-semibold font-indie-flower bg-gradient-to-br from-orange-300 to-red-700 bg-clip-text'>{events[0]?.title}</h1>
                 <Link to={`/category/${events[0]?.id}`}><button className="w-full bg-slate-700 bg-opacity-50 hover:bg-opacity-100 rounded-xl px-4 py-2 text-lg font-semibold">View Details</button></Link>
             </div>
-            <div id="item2" className="carousel-item w-full h-96 flex justify-center items-center flex-col" style={card1}>
+
+
+            <div id="item2" className="carousel-item w-full h-48 flex justify-center items-center flex-col" style={card1}>
                 <h1 className='mb-4 text-3xl text-transparent font-semibold font-indie-flower bg-gradient-to-br from-orange-300 to-red-700 bg-clip-text'>{events[1]?.title}</h1>
                 <Link to={`/category/${events[1]?.id}`}><button className="w-full bg-slate-700 bg-opacity-50 hover:bg-opacity-100 rounded-xl px-4 py-2 text-lg font-semibold">View Details</button></Link>
             </div>
-            <div id="item3" className="carousel-item w-full h-96 flex justify-center items-center flex-col" style={card2}>
+
+
+            <div id="item3" className="carousel-item w-full h-48 flex justify-center items-center flex-col" style={card2}>
                 <h1 className='mb-4 text-3xl text-transparent font-semibold font-indie-flower bg-gradient-to-br from-orange-300 to-red-700 bg-clip-text'>{events[2]?.title}</h1>
                 <Link to={`/category/${events[2]?.id}`}><button className="w-full bg-slate-700 bg-opacity-50 hover:bg-opacity-100 rounded-xl px-4 py-2 text-lg font-semibold">View Details</button></Link>
             </div>
-            <div id="item4" className="carousel-item w-full h-96 flex justify-center items-center flex-col" style={card3}>
+
+
+            <div id="item4" className="carousel-item w-full h-48 flex justify-center items-center flex-col" style={card3}>
                 <h1 className='mb-4 text-3xl text-transparent font-semibold font-indie-flower bg-gradient-to-br from-orange-300 to-red-700 bg-clip-text'>{events[3]?.title}</h1>
                 <Link to={`/category/${events[3]?.id}`}><button className="w-full bg-slate-700 bg-opacity-50 hover:bg-opacity-100 rounded-xl px-4 py-2 text-lg font-semibold">View Details</button></Link>
             </div>
+
+
         </div>
     );
 };

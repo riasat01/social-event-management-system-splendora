@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { UserAuth } from "../auth-provider/AuthProvider";
+import defaultImage from '../../assets/user-33638_1280.png';
+import {AiOutlineMenu} from 'react-icons/ai';
 
 const Navbar = () => {
     const { user, logOut, loading } = useContext(UserAuth);
@@ -71,22 +73,33 @@ const Navbar = () => {
     </>
     return (
         <div className="absolute w-screen top-0">
-            <nav className="flex justify-between items-center max-w-screen-2xl mx-auto mt-4 md:px-12">
+            <nav className="flex justify-between items-center max-w-screen-2xl mx-auto mt-4 px-4 md:px-12">
+                <details className="md:hidden dropdown dropdown-bottom">
+                    <summary className="p-0 btn"><AiOutlineMenu className="text-xl"></AiOutlineMenu></summary>
+                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                        {navs}
+                    </ul>
+                </details>
                 <h2 className="text-3xl font-bold font-indie-flower">Splendora</h2>
-                <ul className="flex items-center gap-6">
+                <ul className="hidden md:flex items-center gap-6">
                     {navs}
                 </ul>
                 {
-                    loading ? 
-                    <span className="loading loading-infinity loading-lg"></span>
-                    :
-                    user ?
-                        <section className="flex gap-6 items-center">
-                            <p>{user.displayName}</p>
-                            <button onClick={handleSignOut} className="bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 font-semibold">Log Out</button>
-                        </section>
+                    loading ?
+                        <span className="loading loading-infinity loading-lg"></span>
                         :
-                        <Link to={`/login`}><button className="bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 font-semibold">Login</button></Link>
+                        user ?
+                            <section className="flex gap-6 items-center">
+                                <details className="dropdown dropdown-end">
+                                    <summary className="p-0 btn"><img className="h-10 rounded-full" src={user.photoURL ? user.photoURL : defaultImage} alt={`image of ${user.displayName}`} /></summary>
+                                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                                        <li><p>{user.displayName}</p></li>
+                                        <li><button onClick={handleSignOut} className="bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 font-semibold">Log Out</button></li>
+                                    </ul>
+                                </details>
+                            </section>
+                            :
+                            <Link to={`/login`}><button className="bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 font-semibold">Login</button></Link>
                 }
             </nav>
         </div>

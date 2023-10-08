@@ -24,10 +24,10 @@ const Register = () => {
             })
     }
     return (
-        <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col w-1/2">
+        <div className="hero min-h-screen bg-base-200 mt-16">
+            <div className="hero-content flex-col w-full md:w-1/2">
                 <div className="text-center">
-                    <h1 className="text-5xl font-bold my-16">Register now!</h1>
+                    <h1 className="text-5xl font-bold mb-16">Register now!</h1>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100">
                     <div className="card-body">
