@@ -9,6 +9,7 @@ import Register from "../../pages/login/Register";
 import PrivateRoute from "../private-route/PrivateRoute";
 import Profile from "../../pages/profile/Profile";
 import Bookings from "../../pages/bookings/Bookings";
+import CategoryDetails from "../../pages/category-details/CategoryDetails";
 
 const MainRoute = createBrowserRouter([
     {
@@ -46,6 +47,11 @@ const MainRoute = createBrowserRouter([
             {
                 path: `/bookings`,
                 element: <PrivateRoute><Bookings></Bookings></PrivateRoute>
+            },
+            {
+                path: `/category/:id`,
+                element: <PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute>,
+                loader: () => fetch(`../events.json`)
             }
         ]
     }

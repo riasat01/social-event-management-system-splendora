@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { UserAuth } from "../auth-provider/AuthProvider";
 
 const Navbar = () => {
-    const { user, logOut } = useContext(UserAuth);
+    const { user, logOut, loading } = useContext(UserAuth);
 
     // sign out User
     const handleSignOut = () => {
@@ -77,6 +77,9 @@ const Navbar = () => {
                     {navs}
                 </ul>
                 {
+                    loading ? 
+                    <span className="loading loading-infinity loading-lg"></span>
+                    :
                     user ?
                         <section className="flex gap-6 items-center">
                             <p>{user.displayName}</p>

@@ -11,10 +11,10 @@ const Category = () => {
             .then(res => res.json())
             .then(data => {
                 setEvents(data)
-                console.log(events)
+                // console.log(events)
             });
     }, [])
-    console.log(events.slice(0, 3));
+    // console.log(events.slice(0, 3));
     return (
         <section>
             <div className="flex justify-between items-center mx-12">

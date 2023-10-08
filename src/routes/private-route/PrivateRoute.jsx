@@ -5,12 +5,17 @@ import PropTypes from 'prop-types';
 
 
 const PrivateRoute = ({children}) => {
-    const {user} = useContext(UserAuth);
+    const {user,loading} = useContext(UserAuth);
+    if(loading){
+        <span className="loading loading-infinity loading-lg"></span>
+        return;
+    }
+    if(user){
+        return children;
+    }
     return (
         <>
-            {
-                user ? children : <Navigate to={`/`}></Navigate>
-            }
+            <Navigate to={`/login`}></Navigate>
         </>
     );
 };
