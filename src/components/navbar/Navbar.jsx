@@ -76,7 +76,7 @@ const Navbar = () => {
         }
     </>
     return (
-        <div className="absolute w-screen top-0">
+        <div className="absolute max-w-screen w-full top-0">
             <nav className="flex justify-between items-center max-w-screen-2xl mx-auto mt-4 px-4 md:px-12">
                 <details className="md:hidden dropdown dropdown-bottom">
                     <summary className="p-0 btn"><AiOutlineMenu className="text-xl"></AiOutlineMenu></summary>

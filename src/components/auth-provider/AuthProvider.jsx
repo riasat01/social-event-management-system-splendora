@@ -2,6 +2,8 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, deleteUser, onAuthS
 import auth from "../../firebase-info/firebase.config";
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const UserAuth = createContext(null);
 const googleProvider = new GoogleAuthProvider();
@@ -70,6 +72,18 @@ const AuthProvider = ({children}) => {
         deleteAccount,
         logOut
     };
+
+    useEffect(() => {
+        const initializeAOS = async () => {
+            await AOS.init({
+                duration: 1500,
+            });
+            AOS.refresh();
+        };
+    
+        initializeAOS();
+    }, []);
+    
     return (
         <UserAuth.Provider value={userInfo}>
             {children}

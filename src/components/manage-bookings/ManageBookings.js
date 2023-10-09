@@ -13,7 +13,7 @@ const setToLocal = (item) => {
         swal(`Error`, `duplicates not allowed`, `error`);
     }else{
         bookings.push(item);
-        swal(`Error`, `Successfully added`, `error`);
+        swal(`Success`, `Successfully added`, `success`);
     }
     localStorage.setItem('bookings', JSON.stringify(bookings));
 }
