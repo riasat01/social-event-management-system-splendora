@@ -18,14 +18,14 @@ const Category = () => {
     // console.log(events.slice(0, 3));
     return (
         <section>
-            <div className="flex justify-between items-center mx-12">
+            <div className="flex justify-between items-center mx-4 md:mx-12">
                 <h1 className="text-2xl md:text-5xl font-extrabold font-indie-flower my-12">Category at a glance</h1>
                 <Link className="flex justify-center items-center bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 md:text-lg font-semibold" to={`/category`}>
                     <button>Veiw all </button>
                     <AiOutlineArrowRight></AiOutlineArrowRight>
                 </Link>
             </div>
-            <div className="mx-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="mx-4 md:mx-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <section className="lg:col-span-2">
                     <CategoryCarousel events={events?.slice(0, 4)}></CategoryCarousel>
                 </section>

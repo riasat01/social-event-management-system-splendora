@@ -1,3 +1,5 @@
+import swal from 'sweetalert';
+
 const getFromLocal = () => {
     const bookings = JSON.parse(localStorage.getItem(`bookings`));
     return bookings ? bookings : [];
@@ -8,10 +10,10 @@ const setToLocal = (item) => {
     console.log(bookings, item);
     const exists = bookings?.find(booking => booking.id === item.id)
     if(exists){
-        alert(`duplicates not allowed`);
+        swal(`Error`, `duplicates not allowed`, `error`);
     }else{
         bookings.push(item);
-        alert(`Successfully added`);
+        swal(`Error`, `Successfully added`, `error`);
     }
     localStorage.setItem('bookings', JSON.stringify(bookings));
 }

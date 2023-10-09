@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { UserAuth } from "../auth-provider/AuthProvider";
 import defaultImage from '../../assets/user-33638_1280.png';
 import {AiOutlineMenu} from 'react-icons/ai';
+import swal from 'sweetalert';
 
 const Navbar = () => {
     const { user, logOut, loading } = useContext(UserAuth);
@@ -11,8 +12,11 @@ const Navbar = () => {
     const handleSignOut = () => {
         logOut()
             .then(() => {
-                alert(`${user.displayName} logged out`)
+                swal(`${user.displayName} logged out`)
             })
+            .catch(error => {
+                swal(`Error`, error.message, `error`);
+            });
     }
     const navs = <>
         <li>

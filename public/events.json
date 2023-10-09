@@ -3,60 +3,80 @@
         "id": 1,
         "title": "Wedding",
         "description": "Celebrate the union of two souls in a grand wedding ceremony.",
-        "img": "https://i.postimg.cc/vHsJWJfz/image.png"
+        "img": "https://i.postimg.cc/vHsJWJfz/image.png",
+        "details": "Make your special day truly magical with our wedding planning services. From selecting the perfect venue to coordinating every detail of the ceremony and reception, we ensure that your wedding is a reflection of your love story. Our team of experienced professionals will work closely with you to create an unforgettable day filled with joy, love, and cherished memories.",
+        "price": "$10,000 - $20,000"
     },
     {
         "id": 2,
         "title": "Birthday Party",
         "description": "Throw a fun and memorable birthday party for your loved ones.",
-        "img": "https://i.postimg.cc/T2994FBQ/image.png"
+        "img": "https://i.postimg.cc/T2994FBQ/image.png",
+        "details": "Make birthdays extra special with our birthday party planning services. Whether it's a milestone celebration or a surprise party, we take care of everything, from designing the theme and decorations to organizing entertainment and delicious catering. Our goal is to create a unique and joyous experience that will leave your loved ones smiling.",
+        "price": "$1,000 - $5,000"
     },
     {
         "id": 3,
         "title": "Anniversary",
         "description": "Celebrate years of love and togetherness with an anniversary event.",
-        "img": "https://i.postimg.cc/rmq4GFyT/image.png"
+        "img": "https://i.postimg.cc/rmq4GFyT/image.png",
+        "details": "Rekindle the romance and celebrate your journey of love with an unforgettable anniversary event. We specialize in crafting intimate and meaningful celebrations that honor your love story. From elegant dinners to surprise getaways, we help you create cherished moments that reflect the depth of your relationship.",
+        "price": "$2,000 - $10,000"
     },
     {
         "id": 4,
         "title": "Engagement Party",
         "description": "Announce your engagement with a joyous engagement party.",
-        "img": "https://i.postimg.cc/x1RNfVyF/image.png"
+        "img": "https://i.postimg.cc/x1RNfVyF/image.png",
+        "details": "Share the news of your engagement in style with a spectacular engagement party. We work closely with you to design an event that captures your love and excitement. From selecting the perfect venue to planning the engagement party decor and entertainment, we make sure your celebration is as unique as your love story.",
+        "price": "$1,500 - $7,500"
     },
     {
         "id": 5,
         "title": "Retirement Party",
         "description": "Bid farewell to a colleague with a memorable retirement party.",
-        "img": "https://i.postimg.cc/rskqRKqG/image.png"
+        "img": "https://i.postimg.cc/rskqRKqG/image.png",
+        "details": "Honor the years of dedication and hard work with a heartfelt retirement party. We create retirement celebrations that reflect the retiree's accomplishments and aspirations for the future. From planning speeches and gifts to organizing entertainment and catering, we ensure a memorable send-off for your colleague.",
+        "price": "$1,200 - $6,000"
     },
     {
         "id": 6,
         "title": "Baby Shower",
         "description": "Welcome a new addition to the family with a heartwarming baby shower.",
-        "img": "https://i.postimg.cc/fyCQ3C2Z/image.png"
+        "img": "https://i.postimg.cc/fyCQ3C2Z/image.png",
+        "details": "Embrace the joy of impending parenthood with a beautiful baby shower. Our team specializes in creating baby showers that are filled with love, laughter, and adorable details. From selecting baby shower themes to organizing games and activities, we make sure your celebration is a delightful start to your parenting journey.",
+        "price": "$800 - $4,000"
     },
     {
         "id": 7,
         "title": "Graduation Party",
         "description": "Celebrate academic achievements with a graduation party.",
-        "img": "https://i.postimg.cc/Y0ZfxKyx/image.png"
+        "img": "https://i.postimg.cc/Y0ZfxKyx/image.png",
+        "details": "Celebrate academic achievements with a graduation party that honors the hard work and dedication of the graduate. We handle everything from planning the perfect venue to coordinating decorations and entertainment. Your graduate will feel truly celebrated on this special day.",
+        "price": "$1,500 - $5,000"
     },
     {
         "id": 8,
         "title": "Holiday Party",
         "description": "Spread holiday cheer with a festive holiday party.",
-        "img": "https://i.postimg.cc/13cw8qPB/image.png"
+        "img": "https://i.postimg.cc/13cw8qPB/image.png",
+        "details": "Spread holiday cheer with a festive holiday party that brings friends and family together. We create magical holiday events with stunning decor, delicious food, and joyful entertainment. Whether it's a corporate holiday party or a gathering of loved ones, we'll make your holiday celebration unforgettable.",
+        "price": "$1,000 - $3,000"
     },
     {
         "id": 9,
         "title": "Housewarming Party",
         "description": "Welcome friends and family to your new home with a housewarming party.",
-        "img": "https://i.postimg.cc/c47cVHCp/image.png"
+        "img": "https://i.postimg.cc/c47cVHCp/image.png",
+        "details": "Welcome friends and family to your new home with a warm and inviting housewarming party. We help you create an atmosphere of hospitality and comfort, from choosing the right date to planning the perfect menu. Your new home will be the center of celebration and connection.",
+        "price": "$800 - $2,500"
     },
     {
         "id": 10,
         "title": "Farewell Party",
         "description": "Bid farewell to a departing friend or colleague with a heartfelt party.",
-        "img": "https://i.postimg.cc/k5L8V3DN/image.png"
+        "img": "https://i.postimg.cc/k5L8V3DN/image.png",
+        "details": "Bid farewell to a departing friend or colleague with a heartfelt party that expresses your appreciation and best wishes. We handle all aspects of the farewell party planning, from selecting the venue to creating a memorable atmosphere. Say goodbye with warmth and grace.",
+        "price": "$900 - $3,500"
     }
 ]

@@ -1,11 +1,16 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../components/auth-provider/AuthProvider";
-import { FcGoogle } from 'react-icons/fc'
+import { FcGoogle } from 'react-icons/fc';
+import swal from 'sweetalert';
 
 const Login = () => {
-    const { loginWithEMail, continueWithGoogle } = useContext(UserAuth);
+    const { user, setLoading, loginWithEMail, continueWithGoogle } = useContext(UserAuth);
     const navigate = useNavigate();
+
+    // where to re route
+    const location = useLocation();
+    // console.log(`State from login ${location?.state}`)
 
     // sign in user
     const handleSignIn = (e) => {
@@ -13,21 +18,25 @@ const Login = () => {
         loginWithEMail(e?.target?.email?.value, e?.target?.password?.value)
             .then(userCredintial => {
                 console.log(userCredintial.user);
-                navigate(`/`);
+                swal(`Congratulation ${user?.displayName ? user?.displayName : ``}`, `You have successfully signed in`, `success`)
+                location?.state ? navigate(`${location?.state}`) : navigate(`/`);
             })
             .catch(error => {
-                console.log(error.message);
+                swal(`Error`, error.message, `error`);
+                setLoading(false);
             })
     }
 
     const handlethirdPartySignIn = (callback) => {
         callback()
         .then(userCredintial => {
-            console.log(userCredintial.user);
-            navigate(`/`);
+            // console.log(userCredintial.user);
+            swal(`Congratulation ${userCredintial?.user?.displayName}`, `You have successfully signed in with Google`, `success`)
+            location?.state ? navigate(`${location?.state}`) : navigate(`/`);
         })
         .catch(error => {
-            console.log(error.message);
+            swal(`Error`, error.message, `error`);
+            setLoading(false);
         })
     }
     return (

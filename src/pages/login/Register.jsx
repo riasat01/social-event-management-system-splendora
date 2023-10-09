@@ -1,26 +1,49 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../components/auth-provider/AuthProvider";
+import swal from 'sweetalert';
 
 const Register = () => {
-    const { userWithEmail, setUserName } = useContext(UserAuth);
+    
+    const { setLoading, userWithEmail, setUserName } = useContext(UserAuth);
+    const navigate = useNavigate();
+
+    // where to re route
+    const location = useLocation();
     
     // register user
     const handleRegister = (e) => {
         e?.preventDefault();
-        userWithEmail(e?.target?.email?.value, e?.target?.password?.value)
+        const name = e?.target?.name?.value;
+        const email = e?.target?.email?.value;
+        const password = e?.target?.password?.value;
+        if(password.length < 6){
+            swal(`Error`, `Password must be at 6 characters long`, `error`);
+            return;
+        }else if(!(/[A-Z]/.test(password))){
+            swal(`Error`, `Password must contain at least one capital letter`, `error`);
+            return;
+        }else if(!/[!@#$%^&*]/.test(password)){
+            swal(`Error`, `Password must contain at least one of these !@#$%^&* characters`, `error`);
+            return;
+        }
+        userWithEmail(email, password)
             .then(userCredential => {
-                console.log(userCredential.user);
-                setUserName(e?.target?.name?.value)
+                // console.log(userCredential.user);
+                setUserName(name)
                 .then(() => {
-                    console.log(`user name updated`);
+                    // console.log(`user name updated`);
+                    swal(`Congratulation ${userCredential?.user?.displayName}`, `You have successfully registered`, `success`)
+                    location?.state ? navigate(`${location?.state}`) : navigate(`/`);
                 })
                 .catch(error => {
-                    console.log(error.message);
+                    swal(`Error`, error.message, `error`);
+                    setLoading(false);
                 })
             })
             .catch(error => {
-                console.log(error.message);
+                swal(`Error`, error.message, `error`);
+                setLoading(false);
             })
     }
     return (
